@@ -28,7 +28,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: CatalogApp
-        path: /catalog/build/outputs/apk/debug/catalog-debug.apk
+        path: catalog/build/outputs/apk/debug/catalog-debug.apk
         compression-level: 0
       
     
