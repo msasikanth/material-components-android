@@ -31,6 +31,7 @@ import androidx.annotation.Nullable;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.materialswitch.MaterialSwitch;
+import com.google.android.material.shape.RelativeCornerSize;
 import com.google.android.material.slider.Slider;
 import com.google.android.material.snackbar.Snackbar;
 import io.material.catalog.feature.DemoFragment;
@@ -98,11 +99,11 @@ public class ButtonToggleGroupDemoFragment extends DemoFragment {
           });
     }
 
-    Slider insideCornerSizeSlider = view.findViewById(R.id.insideCornerSizeSlider);
-    insideCornerSizeSlider.addOnChangeListener(
+    Slider innerCornerSizeSlider = view.findViewById(R.id.innerCornerSizeSlider);
+    innerCornerSizeSlider.addOnChangeListener(
         (slider, value, fromUser) -> {
           for (MaterialButtonToggleGroup toggleGroup : toggleGroups) {
-            toggleGroup.setInsideCornerSizeInFraction(value / 100f);
+            toggleGroup.setInnerCornerSize(new RelativeCornerSize(value / 100f));
           }
         });
 
@@ -112,17 +113,6 @@ public class ButtonToggleGroupDemoFragment extends DemoFragment {
           float pixelsInDp = view.getResources().getDisplayMetrics().density;
           for (MaterialButtonToggleGroup toggleGroup : toggleGroups) {
             toggleGroup.setSpacing((int) (value * pixelsInDp));
-          }
-        });
-    MaterialSwitch morphCornerSwitch = view.findViewById(R.id.switch_morph_corner);
-    morphCornerSwitch.setOnCheckedChangeListener(
-        (buttonView, isChecked) -> {
-          for (MaterialButtonToggleGroup toggleGroup : toggleGroups) {
-            toggleGroup.setCornerAnimationMode(
-                isChecked
-                    ? MaterialButton.CORNER_ANIMATION_MODE_SHRINK_ON_PRESS
-                        | MaterialButton.CORNER_ANIMATION_MODE_GROW_ON_CHECK
-                    : MaterialButton.CORNER_ANIMATION_MODE_NONE);
           }
         });
     return view;

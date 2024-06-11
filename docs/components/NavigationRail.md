@@ -297,13 +297,21 @@ The following is an anatomy diagram for the navigation rail:
 
 #### Header attributes
 
-**Element**     | **Attribute**      | **Related methods**                                        | **Default value**
---------------- | ------------------ | ---------------------------------------------------------- | -----------------
-**Header view** | `app:headerLayout` | `addHeaderView`<br/>`removeHeaderView`<br/>`getHeaderView` | N/A
+**Element**              | **Attribute**            | **Related methods**                                        | **Default value**
+------------------------ | ------------------------ | ---------------------------------------------------------- | -----------------
+**Header view**          | `app:headerLayout`       | `addHeaderView`<br/>`removeHeaderView`<br/>`getHeaderView` | N/A
+**Header bottom margin** | `app:headerMarginBottom` | N/A                                                        | `8dp`
 
 See the
 [FAB documentation](https://github.com/material-components/material-components-android/tree/master/docs/components/FloatingActionButton.md)
 for more attributes.
+
+#### Navigation Menu attributes
+
+**Element**      | **Attribute**          | **Related methods**                   | **Default value**
+---------------- | ---------------------- | ------------------------------------- | -----------------
+**Menu gravity** | `app:menuGravity`      | `setMenuGravity`<br/>`getMenuGravity` | `TOP\|CENTER_HORIZONTAL`
+**Top margin**   | `app:contentMarginTop` | N/A                                   | N/A
 
 #### Navigation item attributes
 
@@ -314,6 +322,9 @@ for more attributes.
 **Ripple (active)**       | `app:itemRippleColor`     | `setItemRippleColor`<br/>`getItemRippleColor`         | `?attr/colorPrimary` at 12% (see all [states](https://github.com/material-components/material-components-android/tree/master/lib/java/com/google/android/material/navigation/res/color/mtrl_navigation_bar_ripple_color.xml))
 **Label visibility mode** | `app:labelVisibilityMode` | `setLabelVisibilityMode`<br/>`getLabelVisibilityMode` | `LABEL_VISIBILITY_AUTO`
 **Item minimum height**   | `app:itemMinHeight`       | `setItemMinimumHeight`<br/>`getItemMinimumHeight`     | `NO_ITEM_MINIMUM_HEIGHT`
+**Item spacing**          | `app:itemSpacing`         | `setItemSpacing`<br/>`getItemSpacing`                 | `0dp`
+
+**Note:** If there's not enough room, `itemMinHeight` and `itemSpacing` may not be respected in order to fit the items.
 
 #### Active indicator attributes
 
@@ -334,6 +345,7 @@ for more attributes.
 **Size**             | `app:itemIconSize`                    | `setItemIconSize`<br/>`setItemIconSizeRes`<br/>`getItemIconSize` | `24dp`
 **Color (inactive)** | `app:itemIconTint`                    | `setItemIconTintList`<br/>`getItemIconTintList`                  | `?attr/colorOnSurfaceVariant`
 **Color (active)**   | `app:itemIconTint`                    | `setItemIconTintList`<br/>`getItemIconTintList`                  | `?attr/colorOnSecondaryContainer`
+**Gravity**          | `app:itemIconGravity`                 | `setItemIconGravity`<br/>`getItemIconGravity`                    | `TOP`
 
 #### Text label attributes
 
